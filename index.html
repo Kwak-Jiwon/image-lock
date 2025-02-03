@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암호 입력</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #image-container {
+            display: none;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>이미지를 보기 위해 암호를 입력하세요</h2>
+    <input type="password" id="password" placeholder="암호 입력">
+    <button onclick="checkPassword()">확인</button>
+
+    <div id="image-container">
+        <h3>🔓 이미지가 공개되었습니다!</h3>
+        <img src="your-image.jpg" alt="보호된 이미지" width="300">
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "1234"; // 원하는 암호 설정
+            const userPassword = document.getElementById("password").value;
+
+            if (userPassword === correctPassword) {
+                document.getElementById("image-container").style.display = "block";
+            } else {
+                alert("❌ 암호가 틀렸습니다!");
+            }
+        }
+    </script>
+
+</body>
+</html>
